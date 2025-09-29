@@ -135,6 +135,87 @@
       🌐 LinkedIn : <a href="#">Nesrine BOUKLI</a>
     </p>
   </div>
+  <!-- 🤖 Mini Chatbot FAQ -->
+<div id="chatbox">
+  <div id="messages"></div>
+  <input type="text" id="userInput" placeholder="Ask a question..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<style>
+#chatbox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 2px solid #0073e6;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 14px;
+  z-index: 1000;
+}
+#messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#messages div {
+  margin: 5px 0;
+}
+#userInput {
+  width: 70%;
+  padding: 5px;
+}
+button {
+  padding: 5px 10px;
+  background: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+</style>
+
+<script>
+function sendMessage() {
+  let input = document.getElementById("userInput").value;
+  let messages = document.getElementById("messages");
+  
+  if (!input.trim()) return;
+
+  let userMsg = document.createElement("div");
+  userMsg.textContent = "You: " + input;
+  messages.appendChild(userMsg);
+
+  let botMsg = document.createElement("div");
+
+  // Réponses basiques FAQ
+  if (input.toLowerCase().includes("price") || input.toLowerCase().includes("tarif")) {
+    botMsg.textContent = "Bot: Our standard rate is €250/month, with a special launch offer at €180 for the first 6 months.";
+  } else if (input.toLowerCase().includes("time") || input.toLowerCase().includes("long")) {
+    botMsg.textContent = "Bot: As soon as you sign the contract, we take care of your payroll immediately.";
+  } else if (input.toLowerCase().includes("contact")) {
+    botMsg.textContent = "Bot: You can reach us at nespaie.ent@gmail.com or +33 6 64 04 97 56.";
+  } else if (input.toLowerCase().includes("services")) {
+    botMsg.textContent = "Bot: We provide payroll processing, contracts, payslips, and social declarations for small businesses.";
+  } else if (input.toLowerCase().includes("hours") || input.toLowerCase().includes("available")) {
+    botMsg.textContent = "Bot: Our team is available from 9 a.m. to 7 p.m. to support you.";
+  } else {
+    botMsg.textContent = "Bot: Thank you for your question! We'll get back to you shortly.";
+  }
+
+  messages.appendChild(botMsg);
+  messages.scrollTop = messages.scrollHeight; // scroll auto
+  document.getElementById("userInput").value = "";
+}
+</script>
+
 </body>
 </html>
 
