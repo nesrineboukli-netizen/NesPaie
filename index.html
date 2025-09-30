@@ -62,16 +62,28 @@
     .offer .normal { text-decoration: line-through; opacity: 0.8; }
     .offer .note { margin-top: 15px; font-size: 0.9em; opacity: 0.9; }
 
-    /* --- Bloc vidéo --- */
-    iframe {
+    /* --- Bloc vidéo (21:9 ratio for cinematic look) --- */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 42.85%; /* 21:9 ratio */
+    }
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      margin-top: 20px;
     }
 
-    /* --- Bloc contact (bleu dégradé) --- */
+    /* --- Bloc contact (lighter blue gradient) --- */
     .contact {
-      background: linear-gradient(135deg, #004080, #0066cc);
+      background: linear-gradient(135deg, #0066cc, #3399ff);
       color: white;
       padding: 30px;
       border-radius: 15px;
@@ -159,8 +171,8 @@
 
   <!-- 🎥 Bloc vidéo Canva -->
   <h2>Discover NesPaie in Video</h2>
-  <div style="position: relative; width: 100%; max-width: 700px; margin: 0 auto; padding-top: 56.25%;">
-    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+  <div class="video-container">
+    <iframe 
       src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
       allowfullscreen="allowfullscreen" allow="fullscreen">
     </iframe>
@@ -191,7 +203,7 @@
   <div class="contact">
     <h2>Contact</h2>
     <p>
-      📞 Téléphone : <a href="tel:+33664049756">06 64 04 97 56</a><br>
+      📞 Coming soon<br>
       ✉️ Email : <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
       🌐 Réseaux sociaux : <a href="#">LinkedIn</a>
     </p>
