@@ -24,8 +24,14 @@
       font-size: 2.5em;
     }
 
+    h2 {
+      margin-top: 30px;
+      color: #003366;
+    }
+
     p {
       font-size: 1.2em;
+      line-height: 1.6;
     }
 
     .container {
@@ -34,15 +40,8 @@
       padding: 20px;
     }
 
-    .contact {
-      background: #eee;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
     a {
-      color: #0073e6;
+      color: #ffdd57;
       text-decoration: none;
       font-weight: bold;
     }
@@ -63,13 +62,74 @@
     .offer .normal { text-decoration: line-through; opacity: 0.8; }
     .offer .note { margin-top: 15px; font-size: 0.9em; opacity: 0.9; }
 
-    /* --- Vidéo --- */
+    /* --- Bloc vidéo --- */
     iframe {
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       margin-top: 20px;
-      width: 100%;
-      height: 400px;
+    }
+
+    /* --- Bloc contact (bleu dégradé) --- */
+    .contact {
+      background: linear-gradient(135deg, #004080, #0066cc);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .contact a {
+      color: #ffdd57;
+    }
+
+    /* --- Chatbot miniFAQ --- */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 2px solid #0073e6;
+      border-radius: 10px;
+      width: 300px;
+      max-height: 400px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+      font-size: 14px;
+    }
+    #chatbot-header {
+      background: #0073e6;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      text-align: left;
+    }
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    #chatbot-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+    }
+    #chatbot-input button {
+      background: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -95,13 +155,14 @@
       Notre objectif : vous permettre de vous concentrer sur le développement de votre activité plutôt 
       que sur la complexité administrative.
     </p>
+  </div>
 
-    <!-- 🎥 Bloc vidéo Canva -->
-    <h2>Discover NesPaie in Video</h2>
-    <iframe 
-      src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed&autoplay=1&loop=1&muted=1" 
-      allowfullscreen="allowfullscreen" 
-      allow="autoplay; fullscreen">
+  <!-- 🎥 Bloc vidéo Canva -->
+  <h2>Discover NesPaie in Video</h2>
+  <div style="position: relative; width: 100%; max-width: 700px; margin: 0 auto; padding-top: 56.25%;">
+    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+      src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
+      allowfullscreen="allowfullscreen" allow="fullscreen">
     </iframe>
   </div>
 
@@ -130,93 +191,49 @@
   <div class="contact">
     <h2>Contact</h2>
     <p>
-      📞 Téléphone : <a href="tel:+coming soon"></a><br>
+      📞 Téléphone : <a href="tel:+33664049756">06 64 04 97 56</a><br>
       ✉️ Email : <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
-      🌐 LinkedIn : <a href="#">Nesrine BOUKLI</a>
+      🌐 Réseaux sociaux : <a href="#">LinkedIn</a>
     </p>
   </div>
-  <!-- 🤖 Mini Chatbot FAQ -->
-<div id="chatbox">
-  <div id="messages"></div>
-  <input type="text" id="userInput" placeholder="Ask a question..." />
-  <button onclick="sendMessage()">Send</button>
-</div>
 
-<style>
-#chatbox {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background: white;
-  border: 2px solid #0073e6;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  font-size: 14px;
-  z-index: 1000;
-}
-#messages {
-  max-height: 200px;
-  overflow-y: auto;
-  margin-bottom: 10px;
-  text-align: left;
-}
-#messages div {
-  margin: 5px 0;
-}
-#userInput {
-  width: 70%;
-  padding: 5px;
-}
-button {
-  padding: 5px 10px;
-  background: #0073e6;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background: #0056b3;
-}
-</style>
+  <!-- 💬 Mini Chatbot -->
+  <div id="chatbot">
+    <div id="chatbot-header">💬 NesPaie Assistant</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Ask me something...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
 
-<script>
-function sendMessage() {
-  let input = document.getElementById("userInput").value;
-  let messages = document.getElementById("messages");
-  
-  if (!input.trim()) return;
+  <script>
+    const faq = {
+      "how long does it take": "As soon as you sign the contract, services start immediately.",
+      "pricing": "Our special offer is €180/month for the first 6 months, then €250/month.",
+      "hello": "Hello! How can I help you today?",
+      "contact": "Please contact us via email: nespaie.ent@gmail.com"
+    };
 
-  let userMsg = document.createElement("div");
-  userMsg.textContent = "You: " + input;
-  messages.appendChild(userMsg);
+    function sendMessage() {
+      let input = document.getElementById("chatbot-text");
+      let message = input.value.trim();
+      if (!message) return;
+      let chatBox = document.getElementById("chatbot-messages");
+      chatBox.innerHTML += "<div><strong>You:</strong> " + message + "</div>";
 
-  let botMsg = document.createElement("div");
+      let reply = "Please contact us via email: nespaie.ent@gmail.com";
+      for (let key in faq) {
+        if (message.toLowerCase().includes(key)) {
+          reply = faq[key];
+          break;
+        }
+      }
 
-  // Réponses basiques FAQ
-  if (input.toLowerCase().includes("price") || input.toLowerCase().includes("tarif")) {
-    botMsg.textContent = "Bot: Our standard rate is €250/month, with a special launch offer at €180 for the first 6 months.";
-  } else if (input.toLowerCase().includes("time") || input.toLowerCase().includes("long")) {
-    botMsg.textContent = "Bot: As soon as you sign the contract, we take care of your payroll immediately.";
-  } else if (input.toLowerCase().includes("contact")) {
-    botMsg.textContent = "Bot: You can reach us at nespaie.ent@gmail.com or +33 6 64 04 97 56.";
-  } else if (input.toLowerCase().includes("services")) {
-    botMsg.textContent = "Bot: We provide payroll processing, contracts, payslips, and social declarations for small businesses.";
-  } else if (input.toLowerCase().includes("hours") || input.toLowerCase().includes("available")) {
-    botMsg.textContent = "Bot: Our team is available from 9 a.m. to 7 p.m. to support you.";
-  } else {
-    botMsg.textContent = "Bot: Thank you for your question! We'll get back to you shortly.";
-  }
-
-  messages.appendChild(botMsg);
-  messages.scrollTop = messages.scrollHeight; // scroll auto
-  document.getElementById("userInput").value = "";
-}
-</script>
-
+      chatBox.innerHTML += "<div><strong>Bot:</strong> " + reply + "</div>";
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
 </body>
 </html>
-
-  
