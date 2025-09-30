@@ -13,7 +13,7 @@
       text-align: center;
     }
 
-    /* 🌊 Animated gradient header */
+    /* ✅ Animated gradient header */
     header {
       background: linear-gradient(135deg, #004080, #0073e6, #3399ff);
       background-size: 400% 400%;
@@ -22,14 +22,21 @@
       padding: 60px 20px;
       position: relative;
     }
+
     @keyframes gradientWave {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    h1 { margin: 0; font-size: 2.5em; }
-    p { font-size: 1.2em; }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
 
     .container {
       max-width: 900px;
@@ -37,168 +44,11 @@
       padding: 20px;
     }
 
-    /* 📦 Contact box */
-    .contact {
-      background: linear-gradient(135deg, #0073e6, #004080);
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      margin-top: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .contact a { color: #ffdd57; text-decoration: none; font-weight: bold; }
-
-    /* 💰 Special offer */
+    /* ✅ Special offer box */
     .offer {
       background: linear-gradient(135deg, #0073e6, #004080);
       color: white;
       padding: 30px;
       border-radius: 15px;
       margin: 40px auto;
-      max-width: 700px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .offer h2 { font-size: 1.8em; margin-bottom: 15px; }
-    .offer p { font-size: 1.2em; line-height: 1.6; }
-    .offer .promo { font-size: 1.5em; font-weight: bold; color: #ffdd57; }
-    .offer .normal { text-decoration: line-through; opacity: 0.8; }
-    .offer .note { margin-top: 15px; font-size: 0.9em; opacity: 0.9; }
-
-    /* 🎥 Video block */
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 20px auto;
-      padding-top: 56.25%; /* ratio 16:9 */
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>NesPaie</h1>
-    <p>French partner for a payroll that speaks your language</p>
-  </header>
-
-  <div class="container">
-    <h2>About NesPaie</h2>
-    <p>
-      Our mission is to help small English-speaking businesses better understand French payroll. 
-      By simplifying complex processes, we save them valuable time so they can focus on growing their 
-      business instead of dealing with administrative challenges.
-    </p>
-
-    <h2>À propos de NesPaie</h2>
-    <p>
-      Réalisation de la paie de vos salariés, pour toute petite entreprise de moins de 10 salariés.  
-      Accompagnement des petites entreprises anglophones dans la compréhension de la paie française, 
-      et simplification des démarches en leur faisant gagner un temps précieux.  
-      Notre objectif : vous permettre de vous concentrer sur le développement de votre activité plutôt 
-      que sur la complexité administrative.
-    </p>
-
-    <!-- 🎥 Wide video -->
-    <h2>Discover NesPaie in Video</h2>
-    <div class="video-container">
-      <iframe src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
-              allowfullscreen="allowfullscreen"></iframe>
-    </div>
-
-    <h2>Our Services</h2>
-    <p>
-      ✅ Employee onboarding through payroll software<br>
-      ✅ Contract services<br>
-      ✅ Payslips and social declarations
-    </p>
-    <p>
-      Our team is available from 9 a.m. to 7 p.m. to answer your questions and support your needs.
-    </p>
-  </div>
-
-  <!-- 💰 Special offer -->
-  <div class="offer">
-    <h2>✨ Special Launch Offer ✨</h2>
-    <p>
-      For the <strong>first 6 months</strong>, benefit from a reduced rate while discovering our services.<br>
-      <span class="promo">€180/month*</span> instead of <span class="normal">€250/month</span>.
-    </p>
-    <p class="note">*Offer valid for new clients – limited-time opportunity.</p>
-  </div>
-
-  <!-- 📦 Contact -->
-  <div class="contact">
-    <h2>Contact</h2>
-    <p>
-      📞 Phone: <em>Coming soon</em><br>
-      ✉️ Email: <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
-      🌐 LinkedIn: <a href="#">Nesrine BOUKLI</a>
-    </p>
-  </div>
-/* --- Chatbot miniFAQ modern style --- */
-#chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border-radius: 20px;
-  width: 320px;
-  max-height: 420px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  overflow: hidden;
-  font-size: 14px;
-  border: none;
-}
-
-/* Header of bot with gradient */
-#chatbot-header {
-  background: linear-gradient(135deg, #0073e6, #004080);
-  color: white;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-/* Messages area */
-#chatbot-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  text-align: left;
-}
-
-/* Input bar */
-#chatbot-input {
-  display: flex;
-  border-top: 1px solid #ddd;
-}
-#chatbot-input input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-}
-#chatbot-input button {
-  background: linear-gradient(135deg, #0073e6, #004080);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 0;
-}
-</script>
-
- </body>
-</html>
+      m
