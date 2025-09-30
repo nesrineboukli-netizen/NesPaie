@@ -143,19 +143,61 @@
       🌐 LinkedIn: <a href="#">Nesrine BOUKLI</a>
     </p>
   </div>
-<!-- 🤖 Chatbot MiniFAQ -->
-<script src="https://unpkg.com/minifaq-widget@latest/dist/minifaq-widget.js"></script>
-<script>
-  MiniFAQWidget.init({
-    questions: [
-      { q: "How long does it take to get the proper service?", a: "As soon as you sign the contract." },
-      { q: "Do I need a French SIRET to work with you?", a: "Yes, but we can guide you through the process." },
-      { q: "What if I have less than 5 employees?", a: "Our service is designed especially for small businesses under 10 employees." }
-    ],
-    placeholder: "Ask me about payroll...",
-    theme: "blue",
-    fallback: "Please contact us via email: nespaie.ent@gmail.com"
-  });
+/* --- Chatbot miniFAQ modern style --- */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 20px;
+  width: 320px;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  font-size: 14px;
+  border: none;
+}
+
+/* Header of bot with gradient */
+#chatbot-header {
+  background: linear-gradient(135deg, #0073e6, #004080);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* Messages area */
+#chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* Input bar */
+#chatbot-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+#chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+#chatbot-input button {
+  background: linear-gradient(135deg, #0073e6, #004080);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+}
 </script>
 
  </body>
