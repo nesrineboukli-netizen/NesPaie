@@ -52,7 +52,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       margin: 30px auto;
-      max-width: 900px;
+      max-width: 700px; /* smaller for elegance */
     }
     .video-container iframe {
       position: absolute;
@@ -158,18 +158,7 @@
     </p>
   </div>
 
-  <!-- CHATBOT (MiniFAQ) -->
-  <script src="https://unpkg.com/minifaq-chatbot/dist/minifaq.min.js"></script>
-  <script>
-    MiniFAQ.init({
-      questions: [
-        { q: "How long does it take to get the proper service?", a: "As soon as you sign the contract, we take care of everything." },
-        { q: "Do you offer support in English?", a: "Yes, our service is fully bilingual: French & English." },
-        { q: "How can I contact you?", a: "Please contact us via email: nespaie.ent@gmail.com" }
-      ],
-      title: "💬 NesPaie Assistant",
-      color: "#0073e6"
-    });
-  </script>
+  <!-- CHATBOT (Tidio as NesPaie Assistant) -->
+  <script src="//code.tidio.co/your-tidio-id.js" async></script>
 </body>
 </html>
