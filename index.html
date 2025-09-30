@@ -13,56 +13,40 @@
       text-align: center;
     }
 
-    /* --- Header with animated gradient --- */
     header {
-      background: linear-gradient(135deg, #004080, #0073e6, #3399ff);
-      background-size: 400% 400%;
-      animation: gradientWave 12s ease infinite;
+      background: #0056b3;
       color: white;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
-    @keyframes gradientWave {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { font-size: 1.2em; }
+
+    h2 {
+      margin-top: 30px;
+      color: #003366;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
 
     .container {
-      max-width: 900px;
+      max-width: 800px;
       margin: 40px auto;
       padding: 20px;
     }
 
-    h2 { margin-top: 30px; }
-
     a {
-      color: #0073e6;
+      color: #ffdd57;
       text-decoration: none;
       font-weight: bold;
     }
 
-    /* --- Video --- */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 format */
-      height: 0;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      margin: 30px auto;
-      max-width: 700px; /* smaller for elegance */
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* --- Special Offer --- */
+    /* --- Styles de l’offre spéciale --- */
     .offer {
       background: linear-gradient(135deg, #0073e6, #004080);
       color: white;
@@ -78,27 +62,83 @@
     .offer .normal { text-decoration: line-through; opacity: 0.8; }
     .offer .note { margin-top: 15px; font-size: 0.9em; opacity: 0.9; }
 
-    /* --- Contact Banner --- */
+    /* --- Bloc vidéo --- */
+    iframe {
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    /* --- Bloc contact (bleu dégradé) --- */
     .contact {
-      background: linear-gradient(135deg, #004080, #0073e6);
+      background: linear-gradient(135deg, #004080, #0066cc);
       color: white;
       padding: 30px;
       border-radius: 15px;
-      margin: 40px auto;
+      margin-top: 40px;
       max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    .contact a { color: #ffdd57; }
+
+    .contact a {
+      color: #ffdd57;
+    }
+
+    /* --- Chatbot miniFAQ --- */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 2px solid #0073e6;
+      border-radius: 10px;
+      width: 300px;
+      max-height: 400px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+      font-size: 14px;
+    }
+    #chatbot-header {
+      background: #0073e6;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      text-align: left;
+    }
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    #chatbot-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+    }
+    #chatbot-input button {
+      background: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <h1>NesPaie</h1>
     <p>French partner for a payroll that speaks your language</p>
   </header>
 
-  <!-- ABOUT -->
   <div class="container">
     <h2>About NesPaie</h2>
     <p>
@@ -117,15 +157,15 @@
     </p>
   </div>
 
-  <!-- VIDEO -->
+  <!-- 🎥 Bloc vidéo Canva -->
   <h2>Discover NesPaie in Video</h2>
-  <div class="video-container">
-    <iframe src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed"
-      allowfullscreen loading="lazy">
+  <div style="position: relative; width: 100%; max-width: 700px; margin: 0 auto; padding-top: 56.25%;">
+    <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+      src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
+      allowfullscreen="allowfullscreen" allow="fullscreen">
     </iframe>
   </div>
 
-  <!-- SERVICES -->
   <div class="container">
     <h2>Our Services</h2>
     <p>
@@ -133,12 +173,12 @@
       ✅ Contract services<br>
       ✅ Payslips and social declarations
     </p>
+
     <p>
       Our team is available from 9 a.m. to 7 p.m. to answer your questions and support your needs.
     </p>
   </div>
 
-  <!-- OFFER -->
   <div class="offer">
     <h2>✨ Special Launch Offer ✨</h2>
     <p>
@@ -148,17 +188,52 @@
     <p class="note">*Offer valid for new clients – limited-time opportunity.</p>
   </div>
 
-  <!-- CONTACT -->
   <div class="contact">
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <p>
-      📞 Phone: Coming soon<br>
-      ✉️ Email: <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
-      🌐 LinkedIn: <a href="#">Nesrine BOUKLI</a>
+      📞 Téléphone : <a href="tel:+33664049756">06 64 04 97 56</a><br>
+      ✉️ Email : <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
+      🌐 Réseaux sociaux : <a href="#">LinkedIn</a>
     </p>
   </div>
 
-  <!-- CHATBOT (Tidio as NesPaie Assistant) -->
-  <script src="//code.tidio.co/your-tidio-id.js" async></script>
+  <!-- 💬 Mini Chatbot -->
+  <div id="chatbot">
+    <div id="chatbot-header">💬 NesPaie Assistant</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Ask me something...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const faq = {
+      "how long does it take": "As soon as you sign the contract, services start immediately.",
+      "pricing": "Our special offer is €180/month for the first 6 months, then €250/month.",
+      "hello": "Hello! How can I help you today?",
+      "contact": "Please contact us via email: nespaie.ent@gmail.com"
+    };
+
+    function sendMessage() {
+      let input = document.getElementById("chatbot-text");
+      let message = input.value.trim();
+      if (!message) return;
+      let chatBox = document.getElementById("chatbot-messages");
+      chatBox.innerHTML += "<div><strong>You:</strong> " + message + "</div>";
+
+      let reply = "Please contact us via email: nespaie.ent@gmail.com";
+      for (let key in faq) {
+        if (message.toLowerCase().includes(key)) {
+          reply = faq[key];
+          break;
+        }
+      }
+
+      chatBox.innerHTML += "<div><strong>Bot:</strong> " + reply + "</div>";
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
 </body>
 </html>
