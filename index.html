@@ -13,40 +13,42 @@
       text-align: center;
     }
 
+    /* 🌊 Animated gradient header */
     header {
-      background: #0056b3;
+      background: linear-gradient(135deg, #004080, #0073e6, #3399ff);
+      background-size: 400% 400%;
+      animation: gradientWave 12s ease infinite;
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      position: relative;
+    }
+    @keyframes gradientWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    h2 {
-      margin-top: 30px;
-      color: #003366;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
+    h1 { margin: 0; font-size: 2.5em; }
+    p { font-size: 1.2em; }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       padding: 20px;
     }
 
-    a {
-      color: #ffdd57;
-      text-decoration: none;
-      font-weight: bold;
+    /* 📦 Contact box */
+    .contact {
+      background: linear-gradient(135deg, #0073e6, #004080);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+    .contact a { color: #ffdd57; text-decoration: none; font-weight: bold; }
 
-    /* --- Styles de l’offre spéciale --- */
+    /* 💰 Special offer */
     .offer {
       background: linear-gradient(135deg, #0073e6, #004080);
       color: white;
@@ -62,109 +64,30 @@
     .offer .normal { text-decoration: line-through; opacity: 0.8; }
     .offer .note { margin-top: 15px; font-size: 0.9em; opacity: 0.9; }
 
-    /* --- Bloc vidéo (21:9 ratio for cinematic look) --- */
+    /* 🎥 Video block */
     .video-container {
       position: relative;
       width: 100%;
       max-width: 900px;
-      margin: 0 auto;
-      padding-top: 42.85%; /* 21:9 ratio */
+      margin: 20px auto;
+      padding-top: 56.25%; /* ratio 16:9 */
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .video-container iframe {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       border: none;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-
-    /* --- Bloc contact (lighter blue gradient) --- */
-    .contact {
-      background: linear-gradient(135deg, #0066cc, #3399ff);
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      margin-top: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .contact a {
-      color: #ffdd57;
-    }
-
-   /* --- Chatbot miniFAQ modern style --- */
-#chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: white;
-  border-radius: 20px;
-  width: 320px;
-  max-height: 420px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  overflow: hidden;
-  font-size: 14px;
-  border: none;
-}
-
-/* Header of bot with gradient */
-#chatbot-header {
-  background: linear-gradient(135deg, #0073e6, #004080);
-  color: white;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-/* Messages area */
-#chatbot-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  text-align: left;
-}
-
-/* Input bar */
-#chatbot-input {
-  display: flex;
-  border-top: 1px solid #ddd;
-}
-#chatbot-input input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-}
-#chatbot-input button {
-  background: linear-gradient(135deg, #0073e6, #004080);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 0;
-}
-  
   </style>
 </head>
 <body>
   <header>
-  <h1>NesPaie</h1>
-  <p>French partner for a payroll that speaks your language</p>
-  <!-- Wave effect -->
-  <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#e6f2ff" fill-opacity="1" d="M0,192L40,192C80,192,160,192,240,186.7C320,181,400,171,480,181.3C560,192,640,224,720,213.3C800,203,880,149,960,128C1040,107,1120,117,1200,144C1280,171,1360,213,1400,234.7L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
-  </svg>
-</header>
+    <h1>NesPaie</h1>
+    <p>French partner for a payroll that speaks your language</p>
+  </header>
 
   <div class="container">
     <h2>About NesPaie</h2>
@@ -182,30 +105,26 @@
       Notre objectif : vous permettre de vous concentrer sur le développement de votre activité plutôt 
       que sur la complexité administrative.
     </p>
-  </div>
 
-  <!-- 🎥 Bloc vidéo Canva -->
-  <h2>Discover NesPaie in Video</h2>
-  <div class="video-container">
-    <iframe 
-      src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
-      allowfullscreen="allowfullscreen" allow="fullscreen">
-    </iframe>
-  </div>
+    <!-- 🎥 Wide video -->
+    <h2>Discover NesPaie in Video</h2>
+    <div class="video-container">
+      <iframe src="https://www.canva.com/design/DAGzaMSgT4w/Ug3GcE-Le9w68d7TBc5C1g/watch?embed" 
+              allowfullscreen="allowfullscreen"></iframe>
+    </div>
 
-  <div class="container">
     <h2>Our Services</h2>
     <p>
       ✅ Employee onboarding through payroll software<br>
       ✅ Contract services<br>
       ✅ Payslips and social declarations
     </p>
-
     <p>
       Our team is available from 9 a.m. to 7 p.m. to answer your questions and support your needs.
     </p>
   </div>
 
+  <!-- 💰 Special offer -->
   <div class="offer">
     <h2>✨ Special Launch Offer ✨</h2>
     <p>
@@ -215,52 +134,29 @@
     <p class="note">*Offer valid for new clients – limited-time opportunity.</p>
   </div>
 
+  <!-- 📦 Contact -->
   <div class="contact">
     <h2>Contact</h2>
     <p>
-      📞 Coming soon<br>
-      ✉️ Email : <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
-      🌐 Réseaux sociaux : <a href="#">LinkedIn</a>
+      📞 Phone: <em>Coming soon</em><br>
+      ✉️ Email: <a href="mailto:nespaie.ent@gmail.com">nespaie.ent@gmail.com</a><br>
+      🌐 LinkedIn: <a href="#">Nesrine BOUKLI</a>
     </p>
   </div>
 
-  <!-- 💬 Mini Chatbot -->
-  <div id="chatbot">
-    <div id="chatbot-header">💬 NesPaie Assistant</div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input">
-      <input type="text" id="chatbot-text" placeholder="Ask me something...">
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
-
+  <!-- 🤖 Chatbot MiniFAQ -->
+  <script src="https://unpkg.com/minifaq-widget@latest/dist/minifaq-widget.js"></script>
   <script>
-    const faq = {
-      "how long does it take": "As soon as you sign the contract, services start immediately.",
-      "pricing": "Our special offer is €180/month for the first 6 months, then €250/month.",
-      "hello": "Hello! How can I help you today?",
-      "contact": "Please contact us via email: nespaie.ent@gmail.com"
-    };
-
-    function sendMessage() {
-      let input = document.getElementById("chatbot-text");
-      let message = input.value.trim();
-      if (!message) return;
-      let chatBox = document.getElementById("chatbot-messages");
-      chatBox.innerHTML += "<div><strong>You:</strong> " + message + "</div>";
-
-      let reply = "Please contact us via email: nespaie.ent@gmail.com";
-      for (let key in faq) {
-        if (message.toLowerCase().includes(key)) {
-          reply = faq[key];
-          break;
-        }
-      }
-
-      chatBox.innerHTML += "<div><strong>Bot:</strong> " + reply + "</div>";
-      input.value = "";
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    MiniFAQWidget.init({
+      questions: [
+        { q: "How long does it take to get the proper service?", a: "As soon as you sign the contract." },
+        { q: "Do I need a French SIRET to work with you?", a: "Yes, but we can guide you through the process." },
+        { q: "What if I have less than 5 employees?", a: "Our service is designed especially for small businesses under 10 employees." }
+      ],
+      placeholder: "Ask me about payroll...",
+      theme: "blue",
+      fallback: "Please contact us via email: nespaie.ent@gmail.com"
+    });
   </script>
 </body>
 </html>
